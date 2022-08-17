@@ -1,4 +1,4 @@
-//getting required elem...
+//getting required elements...
 var input = document.getElementsByTagName("input");
 var addButton = document.getElementById("button-add");
 var cancelButton = document.getElementById("button-cancel");
@@ -30,17 +30,19 @@ addButton.addEventListener("click", (e) => {
       break;
     }
     if (i < input.length - 1 && input[i].value.length < 5) {
-      window.alert("Word should contain atleast 5 letters");
+      window.alert("Minimum Value required is atleast 5");
       break;
     }
     // only at last input it will show created if above conditions not matched
     if (i == input.length - 1) {
-      window.alert("Created!!!");
+      window.alert("Created Successfully!!!");
+      location.reload();
     }
   }
 });
 
 cancelButton.addEventListener("click", (e) => {
   e.preventDefault();
+  //reloading the page to clear out all the fields..
   location.reload();
 });
